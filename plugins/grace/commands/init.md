@@ -1,83 +1,39 @@
 Initialize GRACE framework structure for this project.
 
-## Steps:
+## Template Files
 
-1. Create the `docs/` directory with these files:
+All documents MUST be created from template files located in the plugin's `templates/` directory.
+Read each template file, replace the `$PLACEHOLDER` variables with actual values gathered from the user, and write the result to the target project path.
 
-### docs/knowledge-graph.xml
-Create the initial knowledge graph skeleton. Ask the user for:
-- Project name and short annotation
-- Main keywords (for domain activation)
-- Primary language and framework
-- High-level module list (if known)
+| Template source                          | Target in project           |
+|------------------------------------------|-----------------------------|
+| `templates/CLAUDE.md.template`           | `CLAUDE.md` (project root)  |
+| `templates/docs/knowledge-graph.xml.template` | `docs/knowledge-graph.xml`  |
+| `templates/docs/requirements.xml.template`    | `docs/requirements.xml`     |
+| `templates/docs/technology.xml.template`      | `docs/technology.xml`       |
+| `templates/docs/development-plan.xml.template`| `docs/development-plan.xml` |
 
-Use this template:
-```xml
-<KnowledgeGraph>
-  <Project NAME="$name" VERSION="0.1.0">
-    <keywords>$keywords</keywords>
-    <annotation>$annotation</annotation>
+> **Important:** Never hardcode template content inline. Always read from the `.template` files — they are the single source of truth for document structure.
 
-    <!-- Module declarations use unique ID-based tags:
-         <M-xxx NAME="..." TYPE="...">
-           <purpose>...</purpose>
-           <path>...</path>
-           <depends>...</depends>
-         </M-xxx>
-         See CLAUDE.md "Documentation Artifacts" for full convention. -->
+## Steps
 
-  </Project>
-</KnowledgeGraph>
-```
+1. **Gather project info from the user.** Ask for:
+   - Project name and short annotation
+   - Main keywords (for domain activation)
+   - Primary language, runtime, and framework (with versions)
+   - Key libraries/dependencies (if known)
+   - High-level module list (if known)
 
-### docs/requirements.xml
-Create an empty requirements template with AAG (Actor-Action-Goal) notation:
-```xml
-<RequirementsAnalysis VERSION="0.1.0">
-  <UseCases>
-    <!-- Use cases use unique ID-based tags:
-    <UC-001>
-      <Actor>User</Actor>
-      <Action>Does something</Action>
-      <Goal>To achieve outcome</Goal>
-      <AcceptanceCriteria>How we know it works</AcceptanceCriteria>
-    </UC-001>
-    -->
-  </UseCases>
-</RequirementsAnalysis>
-```
+2. **Create `docs/` directory and populate documents from templates:**
 
-### docs/technology.xml
-Ask the user about their stack choices, then populate:
-```xml
-<TechnologyStack VERSION="0.1.0">
-  <Runtime>$runtime $version</Runtime>
-  <Language>$language $version</Language>
-  <Framework>$framework $version</Framework>
-  <!-- Add specific libraries, version constraints, and compatibility notes -->
-  <VersionConstraints>
-    <!-- Critical: specify exact versions to prevent AI from generating code for wrong API versions -->
-  </VersionConstraints>
-</TechnologyStack>
-```
+   For each `templates/docs/*.xml.template` file:
+   - Read the template file
+   - Replace `$PLACEHOLDER` variables with user-provided values
+   - Write the result to the corresponding `docs/` path
 
-### docs/development-plan.xml
-Create empty blueprint:
-```xml
-<DevelopmentPlan VERSION="0.1.0">
-  <Modules>
-    <!-- Modules use unique ID-based tags: <M-xxx NAME="..." TYPE="..." LAYER="N" ORDER="N">
-         See CLAUDE.md "Documentation Artifacts" for full convention. -->
-  </Modules>
-  <DataFlow>
-    <!-- Flows use unique ID-based tags: <DF-xxx NAME="..." TRIGGER="..."> -->
-  </DataFlow>
-  <ImplementationOrder>
-    <!-- Phases use unique tags: <Phase-N name="..." status="pending"> -->
-  </ImplementationOrder>
-</DevelopmentPlan>
-```
+3. **Create or verify `CLAUDE.md` at project root:**
+   - If `CLAUDE.md` does not exist — read `templates/CLAUDE.md.template`, fill in `$KEYWORDS` and `$ANNOTATION`, and write to project root
+   - If `CLAUDE.md` already exists — warn the user and ask whether to overwrite or keep the existing one
 
-2. Verify that CLAUDE.md exists at project root with GRACE principles. If not — create one from the GRACE template or warn the user to add GRACE conventions.
-
-3. Print a summary of created files and suggest the next step: "Run `/grace plan` to start the architectural planning phase."
+4. **Print a summary** of all created files and suggest the next step:
+   > "Run `/grace plan` to start the architectural planning phase."
