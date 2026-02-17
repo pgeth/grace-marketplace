@@ -1,0 +1,54 @@
+{
+  "name": "grace-marketplace",
+  "owner": {
+    "name": "osovv",
+    "url": "https://github.com/osovv"
+  },
+  "metadata": {
+    "description": "GRACE (Graph-RAG Anchored Code Engineering) — a methodology by Vladimir Ivanov for AI-driven code generation with semantic markup, knowledge graphs, and contracts",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "grace",
+      "source": "./plugins/grace",
+      "description": "Complete GRACE methodology: semantic markup, knowledge graphs, module contracts, and governed autonomy for AI-driven code generation",
+      "version": "1.0.0",
+      "author": {
+        "name": "Vladimir Ivanov",
+        "url": "https://t.me/turboplanner"
+      },
+      "license": "MIT",
+      "keywords": [
+        "grace",
+        "semantic-markup",
+        "knowledge-graph",
+        "contracts",
+        "ai-code-generation",
+        "llm-friendly"
+      ],
+      "category": "methodology",
+      "strict": false,
+      "commands": [
+        "./commands/init.md",
+        "./commands/plan.md",
+        "./commands/add.md",
+        "./commands/generate.md",
+        "./commands/execute.md",
+        "./commands/fix.md",
+        "./commands/refresh.md",
+        "./commands/status.md"
+      ],
+      "agents": [
+        "./agents/grace-architect.md",
+        "./agents/grace-reviewer.md"
+      ],
+      "skills": [
+        "./skills/semantic-markup",
+        "./skills/knowledge-graph",
+        "./skills/contract-driven-dev",
+        "./skills/unique-tag-convention"
+      ]
+    }
+  ]
+}
