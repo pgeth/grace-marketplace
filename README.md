@@ -61,6 +61,7 @@ npx skills add osovv/grace-marketplace -a claude-code
 | `/grace:fix <error>` | Debug using semantic navigation (knowledge graph → block) |
 | `/grace:refresh` | Sync knowledge graph with actual codebase |
 | `/grace:status` | Project health report |
+| `/grace:ask <question>` | Answer a question using full project context |
 
 ## Skills
 

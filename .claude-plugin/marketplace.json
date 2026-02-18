@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "GRACE (Graph-RAG Anchored Code Engineering) — a methodology by Vladimir Ivanov for AI-driven code generation with semantic markup, knowledge graphs, and contracts",
-    "version": "1.1.0"
+    "version": "1.1.1"
   },
   "plugins": [
     {
       "name": "grace",
       "source": "./plugins/grace",
       "description": "Complete GRACE methodology: semantic markup, knowledge graphs, module contracts, and governed autonomy for AI-driven code generation",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "author": {
         "name": "Vladimir Ivanov",
         "url": "https://t.me/turboplanner"
@@ -37,7 +37,8 @@
         "./commands/execute.md",
         "./commands/fix.md",
         "./commands/refresh.md",
-        "./commands/status.md"
+        "./commands/status.md",
+        "./commands/ask.md"
       ],
       "agents": [
         "./agents/grace-architect.md",
