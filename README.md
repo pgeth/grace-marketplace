@@ -33,8 +33,29 @@ npx skills add osovv/grace-marketplace -a claude-code
 
 > Browse more skills at [skills.sh](https://skills.sh)
 
+### Via Codex CLI
+
+Inside Codex, use the built-in skill installer to add GRACE skills:
+
+```
+$skill-installer install https://github.com/osovv/grace-marketplace/tree/main/codex-skills/grace-init
+$skill-installer install https://github.com/osovv/grace-marketplace/tree/main/codex-skills/grace-plan
+$skill-installer install https://github.com/osovv/grace-marketplace/tree/main/codex-skills/grace-generate
+$skill-installer install https://github.com/osovv/grace-marketplace/tree/main/codex-skills/grace-execute
+$skill-installer install https://github.com/osovv/grace-marketplace/tree/main/codex-skills/grace-add
+$skill-installer install https://github.com/osovv/grace-marketplace/tree/main/codex-skills/grace-fix
+$skill-installer install https://github.com/osovv/grace-marketplace/tree/main/codex-skills/grace-refresh
+$skill-installer install https://github.com/osovv/grace-marketplace/tree/main/codex-skills/grace-status
+$skill-installer install https://github.com/osovv/grace-marketplace/tree/main/codex-skills/grace-ask
+$skill-installer install https://github.com/osovv/grace-marketplace/tree/main/codex-skills/grace-explainer
+$skill-installer install https://github.com/osovv/grace-marketplace/tree/main/codex-skills/grace-reviewer
+```
+
+After installation, restart Codex to activate the skills.
+
 ## Quick Start
 
+**Claude Code:**
 ```bash
 # Initialize GRACE structure in your project
 /grace:init
@@ -49,19 +70,34 @@ npx skills add osovv/grace-marketplace -a claude-code
 /grace:execute
 ```
 
+**Codex CLI:**
+```bash
+# Initialize GRACE structure in your project
+$grace-init
+
+# Define requirements, then plan the architecture
+$grace-plan
+
+# Generate code for a specific module
+$grace-generate <module-name>
+
+# Or execute the entire development plan
+$grace-execute
+```
+
 ## Commands
 
-| Command | Description |
-|---------|-------------|
-| `/grace:init` | Bootstrap GRACE structure (docs/, CLAUDE.md, XML templates) |
-| `/grace:plan` | Architectural planning: requirements → modules → contracts |
-| `/grace:add <description>` | Add a new module with contract and knowledge graph entry |
-| `/grace:generate <module>` | Generate code for a module with full GRACE markup |
-| `/grace:execute` | Execute the full development plan with subagent orchestration |
-| `/grace:fix <error>` | Debug using semantic navigation (knowledge graph → block) |
-| `/grace:refresh` | Sync knowledge graph with actual codebase |
-| `/grace:status` | Project health report |
-| `/grace:ask <question>` | Answer a question using full project context |
+| Command (Claude Code) | Command (Codex) | Description |
+|---|---|---|
+| `/grace:init` | `$grace-init` | Bootstrap GRACE structure |
+| `/grace:plan` | `$grace-plan` | Architectural planning |
+| `/grace:add <desc>` | `$grace-add <desc>` | Add a new module with contract |
+| `/grace:generate <module>` | `$grace-generate <module>` | Generate code with GRACE markup |
+| `/grace:execute` | `$grace-execute` | Execute full plan with validation |
+| `/grace:fix <error>` | `$grace-fix <error>` | Debug via semantic navigation |
+| `/grace:refresh` | `$grace-refresh` | Sync knowledge graph |
+| `/grace:status` | `$grace-status` | Project health report |
+| `/grace:ask <question>` | `$grace-ask <question>` | Answer questions with context |
 
 ## Skills
 
