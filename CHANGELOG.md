@@ -6,6 +6,12 @@ The format is inspired by Keep a Changelog, and this project follows Semantic Ve
 
 This changelog currently starts at `1.3.0`. Earlier history is available in the git log.
 
+## [2.0.0] - 2026-03-09
+
+### Changed
+
+- Reorganized skills directory structure: all GRACE skills moved to `skills/grace/` subfolder for better organization and namespacing.
+
 ## [1.3.0] - 2026-03-09
 
 ### Added
