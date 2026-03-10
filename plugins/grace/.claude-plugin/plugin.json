@@ -1,0 +1,27 @@
+{
+  "name": "grace",
+  "description": "Complete GRACE methodology: semantic markup, knowledge graphs, module contracts, and governed autonomy for AI-driven code generation",
+  "version": "1.3.0",
+  "author": {
+    "name": "Vladimir Ivanov",
+    "url": "https://t.me/turboplanner"
+  },
+  "license": "MIT",
+  "strict": false,
+  "agents": [],
+  "skills": [
+    "./skills/grace-init",
+    "./skills/grace-plan",
+    "./skills/grace-generate",
+    "./skills/grace-execute",
+    "./skills/grace-multiagent-execute",
+    "./skills/grace-setup-subagents",
+    "./skills/grace-fix",
+    "./skills/grace-refresh",
+    "./skills/grace-status",
+    "./skills/grace-ask",
+    "./skills/grace-explainer",
+    "./skills/grace-verification",
+    "./skills/grace-reviewer"
+  ]
+}
